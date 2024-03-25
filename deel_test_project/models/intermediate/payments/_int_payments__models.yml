@@ -1,0 +1,23 @@
+version: 2
+
+models:
+  - name: int_payment_currency_conversion
+    description: '{{ doc("int_payment_currency_conversion") }}'
+    columns:
+      - name: external_reference_id
+        description: '{{ doc("stg_globepay__acceptance_report_external_reference_id") }}'
+
+      - name: currency_code
+        description: '{{ doc("stg_globepay__acceptance_report_currency_code") }}'
+
+      - name: amount
+        description: '{{ doc("stg_globepay__acceptance_report_amount") }}'
+
+      - name: currency_conversion_rate
+        description: '{{ doc("int_payment_currency_conversion_currency_conversion_rate") }}'
+
+      - name: local_amount
+        description: '{{ doc("int_payment_currency_conversion_local_amount") }}'
+
+      - name: transaction_at_utc
+        description: '{{ doc("stg_globepay__acceptance_report_transaction_at_utc") }}'

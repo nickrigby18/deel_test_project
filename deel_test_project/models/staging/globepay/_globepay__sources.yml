@@ -1,0 +1,12 @@
+version: 2
+
+sources:
+  - name: globepay
+    database: deel_assessment
+    schema: globepay
+    tables:
+      - name: acceptance_report
+        description: '{{ doc("stg_globepay__acceptance_report") }}'
+
+      - name: chargeback_report
+        description: '{{ doc("stg_globepay__chargeback_report") }}'

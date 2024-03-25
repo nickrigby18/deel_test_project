@@ -1,0 +1,53 @@
+version: 2
+
+models:
+  - name: fct_customer_payments
+
+    columns:
+      - name: external_reference_id
+        description: '{{ doc("stg_globepay__acceptance_report_external_reference_id") }}'
+        tests:
+          - unique
+          - not_null
+
+      - name: internal_reference_id
+        description: '{{ doc("stg_globepay__acceptance_report_internal_reference_id") }}'
+        tests:
+          - unique
+          - not_null
+
+      - name: payment_provider_source
+        description: '{{ doc("stg_globepay__acceptance_report_payment_provider_source") }}'
+
+      - name: acceptance_state
+        description: '{{ doc("stg_globepay__acceptance_report_acceptance_state") }}'
+
+      - name: status
+        description: '{{ doc("stg_globepay__acceptance_report_status") }}'
+
+      - name: amount
+        description: '{{ doc("stg_globepay__acceptance_report_amount") }}'
+
+      - name: local_amount
+        description: '{{ doc("int_payment_currency_conversion_local_amount") }}'
+
+      - name: currency_conversion_rate
+        description: '{{ doc("int_payment_currency_conversion_currency_conversion_rate") }}'
+
+      - name: country_code
+        description: '{{ doc("stg_globepay__acceptance_report_country_code") }}'
+
+      - name: currency_code
+        description: '{{ doc("stg_globepay__acceptance_report_currency_code") }}'
+
+      - name: is_cvv_provided
+        description: '{{ doc("stg_globepay__acceptance_report_is_cvv_provided") }}'
+
+      - name: has_transaction_chargeback
+        description: '{{ doc("stg_globepay__chargeback_report_has_transaction_chargeback") }}'
+
+      - name: is_missing_chargeback
+        description: '{{ doc("fct_customer_payments_is_missing_chargeback") }}'
+
+      - name: transaction_at_utc
+        description: '{{ doc("stg_globepay__acceptance_report_transaction_at_utc") }}'
